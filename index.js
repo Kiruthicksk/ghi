@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
-const allowedOrigins = ['http://localhost:3000',"https://mern-flight-booking.vercel.app"];
+const allowedOrigins = ['http://localhost:3000',"https://main--mern-flight-booking-system.netlify.app"];
 const corsOptions = {
   origin: function(origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
