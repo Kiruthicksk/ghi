@@ -1,7 +1,12 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const userRoute = require("./Routes/userRoute");
+const airlineRoute = require("./Routes/airlineRoute");
+const scheduleRoute = require("./Routes/scheduleRoute");
+const bookingRouter=require('./Routes/bookingRoute')
 const app = express();
 const allowedOrigins = ['http://localhost:3000',"https://mern-flight-booking-system.netlify.app"];
 const corsOptions = {
@@ -17,12 +22,8 @@ const corsOptions = {
   credentials: true
 };
 app.use(cors(corsOptions));
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const userRoute = require("./Routes/userRoute");
-const airlineRoute = require("./Routes/airlineRoute");
-const scheduleRoute = require("./Routes/scheduleRoute");
-const bookingRouter=require('./Routes/bookingRoute')
+app.use(express.json());
 dotenv.config();
 app.use(express.json())
 mongoose
